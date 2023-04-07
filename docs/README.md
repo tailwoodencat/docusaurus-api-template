@@ -1,6 +1,8 @@
 ---
+sidebar_position: 0
 slug: /
-title: api main page
+title: API main page
+sidebar_label: API main page
 hide_table_of_contents: true
 ---
 
