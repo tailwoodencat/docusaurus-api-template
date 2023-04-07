@@ -40,12 +40,12 @@
 
 #### Robots file
 
-- `static/robots.txt
+- `static/robots.txt`
 - [https://docusaurus.io/docs/seo#robots-file](https://docusaurus.io/docs/seo#robots-file)
 
 #### Sitemap file
 
-- has support by build
+- has support after build
 - [https://docusaurus.io/docs/seo#sitemap-file](https://docusaurus.io/docs/seo#sitemap-file)
 
 ## writing
