@@ -14,6 +14,7 @@ init: dep
 .PHONY: dep
 dep:
 	@npm i
+	@npm run clean:lockfile
 
 .PHONY: up
 up:
