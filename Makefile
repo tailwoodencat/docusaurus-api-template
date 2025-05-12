@@ -20,6 +20,7 @@ init: dep
 npm.install:
 	npm install
 	npm run clean:lockfile
+	npm run docusaurus --version
 
 .PHONY: dep.prune
 dep.prune:
