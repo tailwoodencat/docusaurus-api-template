@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+// See: https://docusaurus.io/docs/api/docusaurus-config
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+import {themes as prismThemes} from 'prism-react-renderer';
 
 const math = require('remark-math');
 const katex = require('rehype-katex');
@@ -10,9 +10,15 @@ const katex = require('rehype-katex');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'docusaurus-api-template',
-  tagline: 'docusaurus-api-templat tagline',
+  tagline: 'docusaurus-api-template tagline',
   url: 'http://0.0.0.0:3000',
   baseUrl: '/',
+
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
+  // organizationName: 'tailwoodencat', // Usually your GitHub org/user name.
+  // projectName: 'docusaurus-api-template', // Usually your repo name.
+
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -33,12 +39,30 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          // Remove this to remove the "edit this page" links.
+          // editUrl:
+          //   'https://github.com/tailwoodencat/docusaurus-api-template',
           sidebarCollapsible: true,
           routeBasePath: '/',
           remarkPlugins: [math],
           rehypePlugins: [katex],
         },
         blog: false,
+        // blog: {
+        //   showReadingTime: true,
+        //   feedOptions: {
+        //     type: ['rss', 'atom'],
+        //     xslt: true,
+        //   },
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   editUrl:
+        //     'ttps://github.com/tailwoodencat/docusaurus-api-template',
+        //   // Useful options to enforce blogging best practices
+        //   onInlineTags: 'warn',
+        //   onInlineAuthors: 'warn',
+        //   onUntruncatedBlogPosts: 'warn',
+        // },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -81,8 +105,8 @@ const config = {
         ],
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
       },
       docs: {
         sidebar: {
