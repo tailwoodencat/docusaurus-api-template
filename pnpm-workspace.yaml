@@ -1,0 +1,13 @@
+sideEffectsCache: false # default: true see https://pnpm.io/settings#sideeffectscache
+
+ignoredBuiltDependencies:
+  - fsevents
+
+supportedArchitectures:
+  os:
+  - win32
+  - darwin
+  - current
+  cpu:
+  - x64
+  - arm64
