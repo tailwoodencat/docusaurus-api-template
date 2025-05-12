@@ -7,6 +7,22 @@ env:
 	@echo "-> show fnm version"
 	-fnm --version
 
+.PHONY: clean.coverage.out
+clean.coverage.out:
+	@$(RM) -r ${ENV_COVERAGE_OUT_FOLDER}
+	$(info ~> has cleaned ${ENV_COVERAGE_OUT_FOLDER})
+
+.PHONY: clean.npm.cache
+clean.npm.cache:
+	@$(RM) -r ${ENV_NODE_MODULES_FOLDER}
+	$(info ~> has cleaned ${ENV_NODE_MODULES_FOLDER})
+	@$(RM) ${ENV_NODE_MODULES_LOCK_FILE}
+	$(info ~> has cleaned ${ENV_NODE_MODULES_LOCK_FILE})
+
+.PHONY: clean.all
+clean.all: clean.coverage.out clean.npm.cache
+	@echo "=> clean all finish"
+
 .PHONY: init
 init: dep
 	$(info => just init start)
@@ -26,8 +42,8 @@ npm.install:
 dep.prune:
 	npm prune
 
-.PHONY: dep.praph
-dep.praph:
+.PHONY: dep.graph
+dep.graph:
 	npm list -l
 
 .PHONY: dep
