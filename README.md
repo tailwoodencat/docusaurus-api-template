@@ -25,6 +25,7 @@
 ## env
 
 - node `v20.+`
+- pnpm `10.8.1`
 - build out folder is `build`
 
 ## usage

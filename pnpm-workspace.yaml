@@ -1,5 +1,8 @@
 sideEffectsCache: false # default: true see https://pnpm.io/settings#sideeffectscache
 
+onlyBuiltDependencies:
+  - sharp
+
 ignoredBuiltDependencies:
   - fsevents
 

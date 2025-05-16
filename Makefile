@@ -50,17 +50,17 @@ init: dep
 
 .PHONY: dep.install
 dep.install:
-	npm install
-	npm run clean:lockfile
-	npm run docusaurus --version
+	pnpm install
+	pnpm run clean:lockfile
+	pnpm run docusaurus --version
 
 .PHONY: dep.prune
 dep.prune:
-	npm prune
+	pnpm prune
 
 .PHONY: dep.graph
 dep.graph:
-	npm list -l
+	pnpm list -l
 
 .PHONY: dep
 dep: dep.install
@@ -75,7 +75,7 @@ up.check.upgrade:
 .PHONY: up.do.npm.check.upgrade
 up.do.npm.check.upgrade:
 	npx npm-check-updates -u
-	npm install
+	pnpm install
 
 .PHONY: up.no.interactive
 up.no.interactive: up.check.upgrade up.do.npm.check.upgrade
@@ -86,24 +86,24 @@ up:
 
 .PHONY: clean.docusaurus
 cleanDocusaurus:
-	npm run clear
+	pnpm run clear
 
 .PHONY: build.pre
 build.pre:
-	npm run write-translations
-	npm run write-heading-ids
+	pnpm run write-translations
+	pnpm run write-heading-ids
 
 .PHONY: build.only
 build.only:
-	npm run build
+	pnpm run build
 
 .PHONY: run
 run:
-	npm run start --host 0.0.0.0
+	pnpm run start --host 0.0.0.0
 
 .PHONY: run.build
 run.build: build.only
-	npm run serve --host 0.0.0.0 --no-open
+	pnpm run serve --host 0.0.0.0 --no-open
 
 .PHONY: help
 help:
