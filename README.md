@@ -19,12 +19,13 @@
 - [x] `sitemap` auto build by plugin [@docusaurus/plugin-sitemap](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-sitemap)
 - [x] add [docusaurus-search-local](https://github.com/easyops-cn/docusaurus-search-local)
   - only at `build` version show search
-- [ ] `ideal-image` [https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-ideal-image](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-ideal-image)
+- [x] `ideal-image` [https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-ideal-image](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-ideal-image)
   - when use `pnpm install` will let [https://sharp.pixelplumbing.com/](https://sharp.pixelplumbing.com/) bug with [cross-platform](https://sharp.pixelplumbing.com/install/#cross-platform)
+    - fix from [#11173](https://github.com/facebook/docusaurus/issues/11173) by [pnpm onlybuiltdependencies](https://pnpm.io/settings#onlybuiltdependencies)
 
 ## env
 
-- node `v20.+`
+- node `>=20.17.0`
 - pnpm `10.10.0`
 - build out folder is `build`
 
@@ -39,7 +40,7 @@ $ make init
 # run local
 $ make run
 # run local build
-$ make runBuild
+$ make run.build
 ```
 
 ## more usage see
